@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'controllers/page_controller.dart';
 import 'pages/home_page.dart';
 
 void main() {
