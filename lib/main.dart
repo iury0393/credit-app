@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:provider/provider.dart';
 
-import 'app/app_module.dart';
-import 'app/app_widget.dart';
+void main() {
+  runApp(MyApp());
+}
 
-void main() => runApp(ModularApp(module: AppModule(), child: AppWidget()));
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Credit Card',
+      theme: ThemeData(brightness: Brightness.dark),
+      home: ChangeNotifierProvider(
+        child: HomePage(),
+        create: (BuildContext context) => PageControllerApp(),
+      ),
+    );
+  }
+}
