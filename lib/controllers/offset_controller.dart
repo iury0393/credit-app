@@ -9,7 +9,7 @@ class OffsetController extends ChangeNotifier {
 
   OffsetController(PageController pageController) {
     pageController.addListener(() {
-      _page = pageController.page!;
+      _page = pageController.page;
       _offset = pageController.offset;
       notifyListeners();
     });
