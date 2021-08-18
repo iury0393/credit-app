@@ -8,8 +8,7 @@ class PanelTop extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(left: 24, right: 24, top: 12),
         child: SizedBox(
-          //color: Colors.red,
-          height: MediaQuery.of(context).size.height / 6,
+          height: MediaQuery.of(context).size.height * 0.2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -34,7 +33,7 @@ class PanelTop extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey[400])),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-                  Text(r'R$ 2346.15',
+                  Text(r'$ 2346.15',
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
