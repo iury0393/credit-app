@@ -200,7 +200,7 @@ class FrontCard extends Container {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text('CARD HOLDER', style: TextStyle(fontSize: 12)),
-                            Text('Renato Mota',
+                            Text('IURY V LEITAO',
                                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                           ],
                         ),

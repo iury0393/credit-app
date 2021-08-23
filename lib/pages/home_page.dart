@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                       index: 1,
                       color: Colors.lightBlue,
                       operadoraURL:
-                          'https://lh3.googleusercontent.com/proxy/yjIOYcOVe1fPqB1QW7yr52L7Yhcdh6TVv-SneiLsZKDjAhyL-zd6GWKImF_c1HbrmqS42I4RhSaq--qJ2eG56XLVIsRy5X5lwEH3ys1HpHd6of3fbh1MGpd8',
+                          'https://1000marcas.net/wp-content/uploads/2019/12/MasterCard-Logo.png',
                       imageURL: 'https://ak5.picdn.net/shutterstock/videos/1018020805/thumb/1.jpg',
                     ),
                     ItemPage(
