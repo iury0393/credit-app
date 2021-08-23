@@ -1,4 +1,3 @@
-import 'package:credit_app/controllers/offset_controller.dart';
 import 'package:credit_app/controllers/page_controller.dart';
 import 'package:credit_app/widgets/item_page.dart';
 import 'package:credit_app/widgets/my_app_bar.dart';
@@ -8,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key key}) : super(key: key);
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -19,13 +16,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ChangeNotifierProvider(
-        child: SafeArea(
-          child: Stack(
-            alignment: Alignment.topCenter,
-            children: <Widget>[
-              MyAppBar(),
-              Consumer<PageControllerApp>(
+      body: SafeArea(
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: <Widget>[
+            MyAppBar(),
+            Consumer<PageControllerApp>(
                 builder: (context, notifier, child) {
                   return AnimatedPadding(
                     duration: Duration(milliseconds: 300),
@@ -39,19 +35,21 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
                 },
-                child: PanelTopTwo(),
-              ),
-              Consumer<PageControllerApp>(
-                  builder: (context, notifier, child) {
-                    return AnimatedOpacity(
-                      opacity: notifier.currentIndex != -1 ? 0 : 1,
-                      child: child,
-                      duration: Duration(milliseconds: 300),
-                    );
-                  },
-                  child: PanelTop()),
-              Consumer<PageControllerApp>(
-                builder: (context, notifier, child) => PageView(
+                child: PanelTopTwo()),
+            Consumer<PageControllerApp>(
+                builder: (context, notifier, child) {
+                  return AnimatedOpacity(
+                    opacity: notifier.currentIndex != -1 ? 0 : 1,
+                    child: child,
+                    duration: Duration(milliseconds: 300),
+                  );
+                },
+                child: PanelTop()),
+            Consumer<PageControllerApp>(
+              builder: (context, notifier, child) => Container(
+                margin: EdgeInsets.only(top: 60),
+                height: MediaQuery.of(context).size.height - 60,
+                child: PageView(
                   physics: Provider.of<PageControllerApp>(context, listen: false).currentIndex != -1
                       ? NeverScrollableScrollPhysics()
                       : ClampingScrollPhysics(),
@@ -62,14 +60,17 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     ItemPage(
                       index: 0,
+                      color: Colors.pink,
                       imageURL:
                           'https://us.123rf.com/450wm/grebeshkovmaxim/grebeshkovmaxim1805/grebeshkovmaxim180500202/100769321-colorful-smooth-gradient-color-background-design-for-your-project-design-.jpg?ver=6',
                     ),
                     ItemPage(
                       index: 1,
+                      color: Colors.lightBlue,
                       imageURL: 'https://ak5.picdn.net/shutterstock/videos/1018020805/thumb/1.jpg',
                     ),
                     ItemPage(
+                      color: Colors.grey[800],
                       index: 2,
                       imageURL:
                           'https://i.pinimg.com/736x/5c/ee/af/5ceeafdc811d2269821fb03df29374ff.jpg',
@@ -77,10 +78,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-        create: (BuildContext context) => OffsetController(_pageController),
       ),
     );
   }
