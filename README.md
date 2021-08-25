@@ -6,6 +6,7 @@
   </a>
 </p>
 
+<div align="center"><img src="./assets/gif.gif" alt="Flutter" /></div>
 ---
 
 ## About
