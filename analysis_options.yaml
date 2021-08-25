@@ -10,7 +10,6 @@ analyzer:
 linter:
   rules:
     - always_require_non_null_named_parameters
-    - annotate_overrides
     - avoid_empty_else
     - avoid_equals_and_hash_code_on_mutable_classes
     - avoid_escaping_inner_quotes

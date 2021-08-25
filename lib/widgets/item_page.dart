@@ -95,7 +95,9 @@ class ItemPage extends StatelessWidget {
                   playback: currentIndex != -1 ? Playback.PLAY_FORWARD : Playback.PLAY_REVERSE,
                   builder: (context, animation) {
                     return Positioned(
-                      top: MediaQuery.of(context).size.height * animation['top'] - progress * 230,
+                      top: MediaQuery.of(context).size.height * animation['top'] -
+                          progress * MediaQuery.of(context).size.height * 0.42 +
+                          MediaQuery.of(context).padding.top,
                       height: MediaQuery.of(context).size.height * 0.55,
                       width: MediaQuery.of(context).size.width * 0.80,
                       child: Transform.rotate(
@@ -119,7 +121,7 @@ class ItemPage extends StatelessWidget {
                                       ),
                                       opacity: animation['opacity'],
                                     ),
-                                    scale: animation['scale']),
+                                    scale: animation['scale'] - (progress * 0.6)),
                               );
                             },
                           ),
@@ -216,7 +218,7 @@ class FrontCard extends Container {
                             Text('CARD HOLDER',
                                 style: TextStyle(
                                     fontSize: 12 * MediaQuery.of(context).size.width * 0.0025)),
-                            Text('Renato Mota',
+                            Text('IURY V LEITAO',
                                 style: TextStyle(
                                     fontSize: 18 + MediaQuery.of(context).size.width * 0.0025,
                                     fontWeight: FontWeight.bold)),
